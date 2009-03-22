@@ -1,0 +1,79 @@
+
+{% extends "/documentation-base.html" %}
+
+{% block title %}CL-Terrace View Only Mode: {{project-name}} {% endblock title %}
+
+{% block body %}
+
+    <h1>Cl-Terrace View Only Mode</h1>
+
+    <h2>Project: {{project-name}}</h2>
+    
+    <p>This is the Cl-Terrace "view-only" mode index page. It contains links to all your <a href='#templates'>templates</a>, <a href='#dictionaries'>dictionaries</a>, <a href='#devel-dictionaries'>devel-dictionaries</a>, and <a href='#static-directory'>static files</a></p>
+
+    <h2>Language</h2>
+    <p>Current Language: {% show-language %}</p>
+    <p>To change the language supply the name of a language as the HTTP GET parameter &quot;language&quot;</p>
+    <p>EG:<pre><code>http://localhost:8282?language={% show-language %}</pre></code></p>
+
+    <h2>Documentation:</h2>
+    <p>Automatically generated <a href='/template-api.html'>Template API</a> documentation</p>
+
+    <h2><a name='template-directory'></a>Template Directory</h2>
+    <p>{{template-directory}}</p>
+    <p>
+      {% if templates or dictionaries or devel-dictionaries%}
+
+      <h3><a name='templates'></a>Templates</h3>
+         {% if templates %}
+	    <ul>
+	      {% for t in templates %}
+                 <li><a href='{{t.url-safe}}'>{{t.normal}}</a></li>
+	      {% endfor %}
+	    </ul>
+	  {% else %}
+	    <p>There are no templates in your template directory</p>
+	  {% endif %}
+
+      <h3><a name='dictionaries'></a>Dictionaries</h3>
+         {% if dictionaries %}
+	    <ul>
+	      {% for d in dictionaries %}
+                 <li><a href='{{d.url-safe}}'>{{d.normal}}</a></li>
+	      {% endfor %}
+	    </ul>
+	  {% else %}
+	    <p>There are no dictionaries in your template directory</p>
+	  {% endif %}
+
+      <h3><a name='devel-dictionaries'></a>Devel-Dictionaries</h3>
+         {% if devel-dictionaries %}
+	    <ul>
+	      {% for d in devel-dictionaries %}
+                 <li><a href='{{d.url-safe}}'>{{d.normal}}</a></li>
+	      {% endfor %}
+	    </ul>
+	  {% else %}
+	    <p>There are no devel-dictionaries in your template directory</p>
+	  {% endif %}
+
+      {% else %}
+        <p>There is nothing in your template directory!</p>
+      {% endif %}
+    </p>
+
+    <h2><a name='static-directory'></a>Static Directory</h2>
+    <p>{{static-directory}}</p>
+    <p>
+      {% if not static-files %}
+      There is nothing in your static file directory!
+      {% else %}
+      <ul>
+	{% for s in static-files %}
+        <li><a href='{{s.url-safe}}'>{{s.normal}}</a></li>
+	{% endfor %}
+      </ul>
+      {% endif %}
+    </p>
+
+{% endblock body %}

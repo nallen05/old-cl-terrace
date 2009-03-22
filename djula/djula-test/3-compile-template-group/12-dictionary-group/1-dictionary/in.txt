@@ -1,0 +1,16 @@
+{% dictionary "/dictionary.lisp" %}
+
+{% devel-language :english %}
+{% show-language %}
+A is: {_ a _}
+B is: {_b_}
+
+{% devel-language :spanish %}
+{% show-language %}
+A is: {_ a _}
+B is: {_b_}
+
+{% devel-language :chinese %}
+{% show-language %}
+A is: {_ a _}
+B is: {_b_}.eof

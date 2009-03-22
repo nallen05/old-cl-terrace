@@ -1,0 +1,4 @@
+{% dictionary "/dictionary.lisp" %}
+{% devel-value nested-variable "new car" %}
+{% devel-language english %}
+before. {_text_}.eof

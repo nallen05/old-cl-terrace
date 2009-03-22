@@ -1,0 +1,4 @@
+{% devel-dictionary "/devel-dictionary.lisp" %}
+
+A is: {{a}}
+B is: {{container.b}}

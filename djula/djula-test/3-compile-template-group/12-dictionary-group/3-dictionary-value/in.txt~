@@ -1,0 +1,23 @@
+{% dictionary-value :foo :english "The Foo" :spanish "El Foo" %}
+{% devel-language :english %}
+{% show-language %}
+{{foo}}
+{% devel-language :spanish %}
+{% show-language %}
+{{foo}}
+
+{% dictionary-value :foo :english "THE FOO" :spanish "EL FOO" %}
+{% devel-language :english %}
+{% show-language %}
+{{foo}}
+{% devel-language :spanish %}
+{% show-language %}
+{{foo}}
+
+{% dictionary-value :container :english ((:foo . "nested THE FOO")) :spanish ((:foo . "nested EL FOO")) %}
+{% devel-language :english %}
+{% show-language %}
+{{container.foo}}
+{% devel-language :spanish %}
+{% show-language %}
+{{container.foo}}.eof

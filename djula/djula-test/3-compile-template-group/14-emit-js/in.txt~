@@ -1,0 +1,6 @@
+{% js 'foo.com' %}
+{% js 'bar.com' other='atttribute' $}
+{% js-script %}foo.stuff('now');{% js-script %}
+before
+{% emit-js %}
+after.eof

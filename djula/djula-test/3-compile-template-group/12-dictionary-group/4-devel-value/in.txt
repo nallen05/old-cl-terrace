@@ -1,0 +1,12 @@
+{% devel-value :foo "The Foo" %}
+{{foo}}
+{% devel-value :foo "THE FOO" %}
+{{foo}}
+
+{% devel-value :container ((:foo . "The Nested Foo")) %}
+{{container.foo}}
+{% devel-value :container ((:foo . "THE NESTED FOO")) %}
+{{container.foo}}
+
+{% devel-value :foo "The Foo" :bar "The Bar" %}
+{{foo}} and {{bar}}.eof

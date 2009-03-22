@@ -1,0 +1,7 @@
+{% js 'foo.com' %}
+{% js 'bar.com' other='atttribute' $}
+{% js-script %}foo.stuff('now');{% js-script %}
+before
+<script type='text/javascript' src='foo.com'></script>
+<script type='text/javascript' src='bar.com' other='attribute' ></script>
+after.eof

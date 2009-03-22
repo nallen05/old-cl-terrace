@@ -1,0 +1,15 @@
+{% dictionary-value foo english "The Foo" spanish "El Foo" %}
+{% devel-language english %}
+{% show-language %}
+{_foo_}
+{% devel-language spanish %}
+{% show-language %}
+{_foo_}
+
+{% dictionary-value foo english "THE FOO" spanish "EL FOO" %}
+{% devel-language english %}
+{% show-language %}
+{_foo_}
+{% devel-language spanish %}
+{% show-language %}
+{_foo_}.eof
